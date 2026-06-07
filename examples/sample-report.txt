@@ -1,0 +1,84 @@
+=== WP Rescue Check ===
+
+## Host
+ip-172-31-2-103
+Sun Jun  7 11:23:51 JST 2026
+ 11:23:51 up 3 days,  9:41,  0 users,  load average: 0.02, 0.11, 0.10
+
+## OS
+NAME="Ubuntu"
+VERSION="22.04.5 LTS (Jammy Jellyfish)"
+
+## Disk Usage
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/nvme0n1p1   97G   47G   51G  49% /
+
+## Memory
+               total        used        free      shared  buff/cache   available
+Mem:           1.9Gi       1.1Gi       134Mi        38Mi       654Mi       559Mi
+Swap:          3.0Gi       1.6Gi       1.4Gi
+
+## Docker
+Docker version 29.5.2, build 79eb04c
+Docker Compose version v5.1.4
+active
+
+## Docker Containers
+CONTAINER ID   IMAGE                       COMMAND                  CREATED        STATUS                     PORTS                                                                                                                       NAMES
+6907e8feeebf   wordpress:php8.3-apache     "docker-entrypoint.s…"   22 hours ago   Up 22 hours                80/tcp                                                                                                                      wp-rescue
+ffe2665f6ca5   mariadb:11                  "docker-entrypoint.s…"   24 hours ago   Up 24 hours                3306/tcp                                                                                                                    wp-rescue-db
+fe03f0bed299   traefik:v3.6                "/entrypoint.sh --ap…"   3 days ago     Up 3 days                  0.0.0.0:80->80/tcp, [::]:80->80/tcp, 0.0.0.0:443->443/tcp, [::]:443->443/tcp, 0.0.0.0:8080->8080/tcp, [::]:8080->8080/tcp   demand-monitor-traefik-1
+e89ffd18bc0b   node:20-alpine              "docker-entrypoint.s…"   3 days ago     Up 3 days                                                                                                                                              demand-monitor-node-1
+5705a24e3eab   demand-monitor-app:latest   "docker-php-entrypoi…"   3 days ago     Up 3 days                  9000/tcp                                                                                                                    demand-monitor-horizon-1
+51bc936a89e4   nginx:alpine                "/docker-entrypoint.…"   3 days ago     Up 3 days                  80/tcp                                                                                                                      demand-monitor-webserver-1
+b574cb0b1f1c   tiangolo/nginx-rtmp         "nginx -g 'daemon of…"   3 days ago     Up 3 days                  0.0.0.0:1935->1935/tcp, [::]:1935->1935/tcp                                                                                 demand-monitor-rtmp-server-1
+134b8fccc7c5   demand-monitor-app:latest   "docker-php-entrypoi…"   3 days ago     Up 3 days                  9000/tcp                                                                                                                    demand-monitor-app-1
+f5f9de6c80fd   weseek/growi:6              "/docker-entrypoint.…"   7 months ago   Up 3 days                  3000/tcp                                                                                                                    demand-monitor-growi-1
+f02cf055fa23   mongo:6                     "docker-entrypoint.s…"   7 months ago   Up 3 days                  27017/tcp                                                                                                                   demand-monitor-mongo-1
+5a48770bc08b   redis:7-alpine              "docker-entrypoint.s…"   7 months ago   Up 3 days (healthy)        6379/tcp                                                                                                                    demand-monitor-redis-1
+c47ff1d8f78c   mysql:8.4                   "docker-entrypoint.s…"   7 months ago   Up 3 days (healthy)        33060/tcp, 127.0.0.1:3307->3306/tcp                                                                                         demand-monitor-db-1
+fccf9ffb10a3   keiba-signal-mcp-keiba      "uvicorn server:app …"   7 months ago   Up 3 days                  127.0.0.1:8787->8787/tcp                                                                                                    mcp-keiba
+a81caceca87d   keiba-signal-keiba-app      "docker-php-entrypoi…"   7 months ago   Exited (0) 7 months ago                                                                                                                                keiba-app
+06a86129f207   nginx:alpine                "/docker-entrypoint.…"   7 months ago   Exited (0) 7 months ago                                                                                                                                keiba-web
+8f4b7820d9d8   redis:7-alpine              "docker-entrypoint.s…"   7 months ago   Exited (0) 7 months ago                                                                                                                                keiba-redis
+1bf77f91942a   keiba-signal-keiba-queue    "docker-php-entrypoi…"   7 months ago   Exited (1) 7 months ago                                                                                                                                keiba-queue
+bac23dda1776   8323c1c9f182                "docker-entrypoint.s…"   4 years ago    Exited (128) 2 years ago                                                                                                                               onlyoffice-rabbitmq
+
+## Docker Disk Usage
+TYPE            TOTAL     ACTIVE    SIZE      RECLAIMABLE
+Images          23        14        9.388GB   2.167GB (23%)
+Containers      18        13        17.02MB   0B (0%)
+Local Volumes   27        9         3.111GB   1.405kB (0%)
+Build Cache     88        0         214.8MB   2.027kB
+
+## Listening Ports
+LISTEN 0      4096         0.0.0.0:8080       0.0.0.0:*                                                 
+LISTEN 0      128        127.0.0.1:44331      0.0.0.0:*    users:(("code-6a44c352bd",pid=2190828,fd=12))
+LISTEN 0      4096         0.0.0.0:80         0.0.0.0:*                                                 
+LISTEN 0      4096         0.0.0.0:443        0.0.0.0:*                                                 
+LISTEN 0      4096            [::]:8080          [::]:*                                                 
+LISTEN 0      4096            [::]:80            [::]:*                                                 
+LISTEN 0      4096            [::]:443           [::]:*                                                 
+
+## DNS
+3.114.55.240    wp.ceri.link
+
+## HTTP
+HTTP/1.1 308 Permanent Redirect
+Location: https://wp.ceri.link/
+Date: Sun, 07 Jun 2026 02:23:51 GMT
+Content-Length: 18
+
+
+## HTTPS
+HTTP/2 200 
+content-type: text/html; charset=UTF-8
+date: Sun, 07 Jun 2026 02:23:51 GMT
+link: <https://wp.ceri.link/wp-json/>; rel="https://api.w.org/"
+server: Apache/2.4.67 (Debian)
+set-cookie: pll_language=ja; expires=Mon, 07 Jun 2027 02:23:51 GMT; Max-Age=31536000; path=/; secure; SameSite=Lax
+x-powered-by: PHP/8.3.31
+
+
+
+=== Done ===
