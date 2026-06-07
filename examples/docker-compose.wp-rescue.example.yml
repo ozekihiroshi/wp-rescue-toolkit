@@ -1,0 +1,72 @@
+services:
+  wp-rescue:
+    image: wordpress:php8.3-apache
+    container_name: wp-rescue
+    restart: unless-stopped
+    environment:
+      WORDPRESS_DB_HOST: wp-rescue-db:3306
+      WORDPRESS_DB_NAME: wp_rescue
+      WORDPRESS_DB_USER: wp_rescue
+      WORDPRESS_DB_PASSWORD: wp_rescue_password_change_me
+      WORDPRESS_TABLE_PREFIX: wp_
+    volumes:
+      - wp_rescue_html:/var/www/html
+      - ./wordpress/uploads.ini:/usr/local/etc/php/conf.d/uploads.ini:ro
+    depends_on:
+      - wp-rescue-db
+    labels:
+      - "traefik.enable=true"
+      - "traefik.docker.network=demand-monitor_web"
+      - "traefik.http.routers.wp-rescue.rule=Host(`wp.ceri.link`)"
+      - "traefik.http.routers.wp-rescue.entrypoints=websecure"
+      - "traefik.http.routers.wp-rescue.tls.certresolver=myresolver"
+      - "traefik.http.services.wp-rescue.loadbalancer.server.port=80"
+      - "traefik.http.middlewares.wp-rescue-https-redirect.redirectscheme.scheme=https"
+      - "traefik.http.routers.wp-rescue-http.rule=Host(`wp.ceri.link`)"
+      - "traefik.http.routers.wp-rescue-http.entrypoints=web"
+      - "traefik.http.routers.wp-rescue-http.middlewares=wp-rescue-https-redirect"
+    networks:
+      - internal
+      - dm_web
+
+  wp-rescue-db:
+    image: mariadb:11
+    container_name: wp-rescue-db
+    restart: unless-stopped
+    environment:
+      MARIADB_DATABASE: wp_rescue
+      MARIADB_USER: wp_rescue
+      MARIADB_PASSWORD: wp_rescue_password_change_me
+      MARIADB_ROOT_PASSWORD: wp_rescue_root_password_change_me
+    volumes:
+      - wp_rescue_db:/var/lib/mysql
+    networks:
+      - internal
+
+  wp-cli:
+    image: wordpress:cli-php8.3
+    container_name: wp-rescue-cli
+    profiles:
+      - cli
+    working_dir: /var/www/html
+    environment:
+      WORDPRESS_DB_HOST: wp-rescue-db:3306
+      WORDPRESS_DB_NAME: wp_rescue
+      WORDPRESS_DB_USER: wp_rescue
+      WORDPRESS_DB_PASSWORD: wp_rescue_password_change_me
+    volumes:
+      - wp_rescue_html:/var/www/html
+    depends_on:
+      - wp-rescue-db
+    networks:
+      - internal
+
+volumes:
+  wp_rescue_html:
+  wp_rescue_db:
+
+networks:
+  internal:
+  dm_web:
+    external: true
+    name: demand-monitor_web

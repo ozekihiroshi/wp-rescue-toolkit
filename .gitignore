@@ -1,0 +1,12 @@
+.env
+*.env
+*.sql
+*.sql.gz
+*.tar
+*.tar.gz
+backups/
+uploads/
+wordpress/
+wp-content/
+node_modules/
+.DS_Store
