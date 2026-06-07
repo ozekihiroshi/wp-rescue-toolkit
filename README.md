@@ -98,3 +98,20 @@ See:
 ```text
 docs/wp-malware-triage.md
 ```
+## Use Before Contacting a Developer
+
+You can run this tool before asking a developer for help.
+
+It gives you a simple first report about possible WordPress file-system risks.
+
+This can help reduce the first round of questions such as:
+
+- Is this really a WordPress site?
+- Are there PHP files under uploads?
+- Were PHP files changed recently?
+- Are there suspicious PHP patterns?
+- Are there unusual `.htaccess` rules?
+
+This tool is safe to run because it does not modify or delete files.
+
+However, it is not a full security audit and it does not prove that a site is clean.
