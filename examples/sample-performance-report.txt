@@ -1,0 +1,84 @@
+============================================================
+ WordPress Basic Performance Audit
+============================================================
+Target: .
+Date:   Wed Jun 10 19:03:00 JST 2026
+
+------------------------------------------------------------
+1. WordPress root check
+------------------------------------------------------------
+[MISS] wp-config.php not found
+[MISS] wp-content directory not found
+[WARN] WordPress core files were not clearly detected
+
+------------------------------------------------------------
+2. Server and runtime basics
+------------------------------------------------------------
+[INFO] PHP: PHP 8.1.2-1ubuntu2.24 (cli) (built: May 25 2026 15:08:06) (NTS)
+[INFO] MySQL/MariaDB client: mysql  Ver 15.1 Distrib 10.6.23-MariaDB, for debian-linux-gnu (x86_64) using  EditLine wrapper
+[INFO] WP-CLI not found; WordPress and DB-specific checks will be limited
+
+------------------------------------------------------------
+3. Disk and directory size
+------------------------------------------------------------
+[INFO] Current filesystem usage:
+       Filesystem      Size  Used Avail Use% Mounted on
+       /dev/nvme0n1p1   97G   48G   50G  49% /
+
+[INFO] wp-content size: -
+[INFO] uploads size:    -
+[INFO] plugins size:    -
+[INFO] themes size:     -
+
+------------------------------------------------------------
+4. Plugin and theme inventory
+------------------------------------------------------------
+[INFO] plugins count: 0
+[INFO] themes count:  0
+[INFO] No plugins detected or plugins directory missing
+
+------------------------------------------------------------
+5. Cache-related indicators
+------------------------------------------------------------
+[INFO] object-cache.php not found
+[INFO] advanced-cache.php not found
+[INFO] No common cache/performance plugin candidates found
+
+------------------------------------------------------------
+6. Debug and log indicators
+------------------------------------------------------------
+[OK]   debug.log not found
+[INFO] Skipping wp-config.php debug/cache checks because wp-config.php is missing
+
+------------------------------------------------------------
+7. Uploads directory indicators
+------------------------------------------------------------
+[INFO] uploads directory not found; skipping large file check
+
+------------------------------------------------------------
+8. Optional WP-CLI checks
+------------------------------------------------------------
+[INFO] Skipping WP-CLI checks
+
+------------------------------------------------------------
+9. Performance review notes
+------------------------------------------------------------
+[INFO] Common next checks:
+       - Review slow plugins and unused plugins
+       - Check page cache and object cache configuration
+       - Review image size and uploads growth
+       - Check PHP memory_limit and max_execution_time
+       - Review database size, autoloaded options, and postmeta growth
+       - Check server CPU, memory, disk I/O, and web server logs
+       - Test frontend speed with browser-based tools separately
+
+------------------------------------------------------------
+10. Safety notes
+------------------------------------------------------------
+[WARN] This script is a lightweight audit and does not benchmark real page speed.
+[WARN] Do not delete plugins, cache files, logs, or uploads without a verified backup.
+[WARN] For production sites, confirm impact on staging before optimization changes.
+
+============================================================
+ Performance audit completed
+============================================================

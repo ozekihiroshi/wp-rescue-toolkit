@@ -1,0 +1,67 @@
+============================================================
+ WordPress Backup Readiness Check
+============================================================
+Target: .
+Date:   Wed Jun 10 19:03:00 JST 2026
+
+------------------------------------------------------------
+1. WordPress root check
+------------------------------------------------------------
+[MISS] wp-config.php not found
+[MISS] wp-content directory not found
+[WARN] WordPress core files were not clearly detected
+
+------------------------------------------------------------
+2. Essential content directories
+------------------------------------------------------------
+[MISS] wp-content/uploads not found
+[MISS] wp-content/plugins not found
+[MISS] wp-content/themes not found
+
+------------------------------------------------------------
+3. Content inventory
+------------------------------------------------------------
+[INFO] plugins count: 0
+[INFO] themes count:  0
+[INFO] uploads size:  -
+[INFO] wp-content size: -
+
+------------------------------------------------------------
+4. Backup directory candidates
+------------------------------------------------------------
+[WARN] No common backup directory candidates found
+
+------------------------------------------------------------
+5. Database dump candidates
+------------------------------------------------------------
+[WARN] No .sql / .sql.gz / .sql.zip / .dump files found under target
+
+------------------------------------------------------------
+6. wp-config.php database settings presence
+------------------------------------------------------------
+[WARN] Skipping wp-config.php checks because wp-config.php is missing
+
+------------------------------------------------------------
+7. Restore readiness notes
+------------------------------------------------------------
+[INFO] A reliable restore normally needs:
+       - WordPress files or a clean WordPress core install
+       - wp-content/uploads
+       - wp-content/themes
+       - wp-content/plugins
+       - Database dump
+       - wp-config.php or database connection details
+       - Domain / URL replacement plan when migrating
+       - PHP and MySQL/MariaDB version compatibility check
+
+------------------------------------------------------------
+8. Safety notes
+------------------------------------------------------------
+[WARN] This script does not prove that a backup is restorable.
+[WARN] Before changing a live site, create a fresh file and database backup.
+[WARN] Test restore on a staging environment whenever possible.
+[WARN] Do not expose wp-config.php or database dumps in a public web directory.
+
+============================================================
+ Backup readiness check completed
+============================================================
