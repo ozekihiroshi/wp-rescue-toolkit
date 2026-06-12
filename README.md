@@ -21,6 +21,9 @@ They do not change WordPress settings.
 They do not replace a full professional audit.
 
 They help collect useful information before deeper recovery, migration, cleanup, or optimization work.
+
+---
+
 ## WordPress Response Playbook
 
 This toolkit includes a practical WordPress response playbook for non-destructive first-response workflows:
