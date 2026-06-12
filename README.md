@@ -37,6 +37,14 @@ This toolkit includes a practical WordPress response playbook for non-destructiv
 - [Malware Suspicion](docs/playbooks/malware-suspicion.md)
 - [Migration and Update Readiness](docs/playbooks/migration-update-readiness.md)
 
+## Quick Start by Situation
+
+- Site down? → Start with [Site Down](docs/playbooks/site-down.md)
+- Slow site? → Start with [Slow Site Performance](docs/playbooks/slow-site-performance.md)
+- Database issue? → Start with [MySQL Database Issue](docs/playbooks/mysql-database-issue.md)
+- Malware suspicion? → Start with [Malware Suspicion](docs/playbooks/malware-suspicion.md)
+- Migration/update? → Start with [Migration and Update Readiness](docs/playbooks/migration-update-readiness.md)
+
 ## Why This Toolkit Exists
 
 Many WordPress support requests start with unclear information.
