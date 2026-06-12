@@ -1,4 +1,5 @@
 # WP Rescue Toolkit
+This toolkit is used by professional remote engineers to safely diagnose, migrate, and upgrade WordPress sites on Upwork/Freelancer with zero data loss.
 
 A practical diagnostic toolkit for WordPress recovery, migration, VPS troubleshooting, Docker issues, DNS/SSL checks, and basic security triage.
 
