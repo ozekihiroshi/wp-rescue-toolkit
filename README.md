@@ -21,8 +21,18 @@ They do not change WordPress settings.
 They do not replace a full professional audit.
 
 They help collect useful information before deeper recovery, migration, cleanup, or optimization work.
+## WordPress Response Playbook
 
----
+This toolkit includes a practical WordPress response playbook for non-destructive first-response workflows:
+
+- [WordPress Response Playbook](docs/wordpress-response-playbook.md)
+- [Backup and Restore Readiness](docs/playbooks/backup-restore-readiness.md)
+- [Site Down](docs/playbooks/site-down.md)
+- [Slow Site Performance](docs/playbooks/slow-site-performance.md)
+- [MySQL Database Issue](docs/playbooks/mysql-database-issue.md)
+- [WP-CLI Readiness](docs/playbooks/wp-cli-readiness.md)
+- [Malware Suspicion](docs/playbooks/malware-suspicion.md)
+- [Migration and Update Readiness](docs/playbooks/migration-update-readiness.md)
 
 ## Why This Toolkit Exists
 
