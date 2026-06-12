@@ -10,3 +10,6 @@ wordpress/
 wp-content/
 node_modules/
 .DS_Store
+
+# Local working notes
+examples/memo.txt
