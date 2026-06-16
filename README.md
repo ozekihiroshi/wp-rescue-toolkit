@@ -37,6 +37,7 @@ This toolkit includes a practical WordPress response playbook for non-destructiv
 - [WP-CLI Readiness](docs/playbooks/wp-cli-readiness.md)
 - [Malware Suspicion](docs/playbooks/malware-suspicion.md)
 - [Migration and Update Readiness](docs/playbooks/migration-update-readiness.md)
+- [WordPress Maintenance Work Checklist](checklists/wordpress-maintenance-work-checklist.md)
 
 ## Quick Start by Situation
 
